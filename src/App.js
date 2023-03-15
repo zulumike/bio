@@ -1,8 +1,12 @@
 import React from 'react';
+import Start from './components/Start';
 
 function App() {
-  const value = 'World';
-  return <div>Hello {value}</div>;
+  return (
+    <div>
+      <Start />
+    </div>
+  )
 }
 
 export default App;

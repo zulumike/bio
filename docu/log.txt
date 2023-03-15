@@ -1,0 +1,22 @@
+Lage en interaktiv biografi-app.
+
+Tanken er at man oppgir en nettadresse til "deltakere".
+Disse får opp forskjellige tema å velge blant.
+De får x antall sekunder til å velge.
+Valgt tema vil automagisk vises på f.eks en annen pc
+    - Jeg må da prate om temaet, evt. bare fremvisning av bilde, musikk, video
+Stemmingen må i praksis foregå slik at det lagres noe i database som jeg kan benytte
+til å hente den mest populære tema.
+tidligere valgt tema fjernes fra listen til neste runde.
+Må nok manuelt starte hver runde
+    Kanskje deltakernes sesjoner sjekker f.eks annethvert sekund hvilken runde som gjelder og 
+    hvis ny runde, så presenteres de resterende tema. Før dette presenteres også valgt tema, men ikke mulig
+    å velge enda.
+
+
+15.03.2023
+    - Opprettet en react app
+    - Opprettet azure static web app side bio
+    - Opprettet cosmos db bio
+    - Opprettet http-trigger funksjon
+    - Testet ut det å ha en startside, som dynamisk viser aktuell modal ihht f.eks tema.
