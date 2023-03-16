@@ -3,10 +3,13 @@ import ReactModal from "react-modal";
 import Modal from "react-modal";
 import Hobby from "./Hobby";
 import Work from "./Work";
+import Card from "./Card";
+
+import '../styles/default.css';
 
 function Start() {
     Modal.setAppElement('#root')
-    const [modalToShow, setModalToShow] = useState(<Hobby />);
+    const [modalToShow, setModalToShow] = useState(<Card />);
     const [modalOpen, setModalOpen] = useState(false);
     let cnt = 1;
 

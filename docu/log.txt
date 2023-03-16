@@ -16,7 +16,7 @@ Må nok manuelt starte hver runde
 
     Hva som skal være med:
     - Innledning
-    - Familie
+    - Familie/oppvekst
     - Hobbyer
         - motocross
         - dans
