@@ -14,6 +14,26 @@ Må nok manuelt starte hver runde
     å velge enda.
 
 
+    Hva som skal være med:
+    - Innledning
+    - Familie
+    - Hobbyer
+        - motocross
+        - dans
+        - musikk
+        - trearbeid
+        - jakt og friluftsliv
+        
+    - Utdanning
+    - Arbeidserfaring
+        - dreng
+        - ar data
+        - nordvest blomster
+        - mifo
+        - archery
+
+
+
 15.03.2023
     - Opprettet en react app
     - Opprettet azure static web app side bio
