@@ -1,29 +1,58 @@
 import React, { useState } from "react";
+import '../styles/default.css';
 
 function Work() {
 
-    let index = 1;
-    const [imageName, setImageName] = useState('image1.jpg');
-    const nrOfImgs = 3;
+    const [index, setIndex] = useState(1);
+    const [displayPrev, setDisplayPrev] = useState('none');
+    const [displayNext, setDisplayNext] = useState('block');
     
+    function importAll(r) {
+        let images = {};
+        r.keys().map(item => { images[item.replace('./', '')] = r(item); });
+        return images;
+    }
+
+    const images = importAll(require.context('../img/work', false, /\.(png|jpe?g|svg)$/));
+    
+    const imageArray = Object.entries(images);
+    const nrOfImgs = imageArray.length - 1;
+
+    const [imageName, setImageName] = useState(imageArray[0][1]);
+  
     const handlePrevious = () => {
-        index = index - 1;
-        setImageName('../img/work/image' + index.toString() + '.jpg');
+        console.log(index);
+        setImageName(imageArray[index][1]);
+        if (index < 1) {
+            setDisplayPrev('none');
+            setIndex(index + 1);
+        }
+        else {
+            setIndex(index - 1);
+            setDisplayNext('block');
+        }
     };
     
     const handleNext = () => {
-        index = index + 1;
-        setImageName('../img/work/image' + index.toString() + '.jpg');
+        console.log(index);
+        setImageName(imageArray[index][1]);
+        if (index === nrOfImgs) {
+            setDisplayNext('none');
+            setIndex(index - 1);
+        }
+        else {
+            setIndex(index + 1);
+            setDisplayPrev('block');
+        }
     };
     
     return (
         <div>
             <h1>Arbeidsplasser</h1>
             <div>
-                <button onClick={handlePrevious}>Forrige</button>
+                <button style={{display:displayPrev}} onClick={handlePrevious}>Forrige</button>
                 <img src={imageName}></img>
-                <button onClick={handleNext}>Neste</button>
-                <h2>{imageName}</h2>
+                <button style={{display:displayNext}} onClick={handleNext}>Neste</button>
             </div>
         </div>
     )

@@ -3,13 +3,12 @@ import ReactModal from "react-modal";
 import Modal from "react-modal";
 import Hobby from "./Hobby";
 import Work from "./Work";
-import Card from "./Card";
 
 import '../styles/default.css';
 
 function Start() {
     Modal.setAppElement('#root')
-    const [modalToShow, setModalToShow] = useState(<Card />);
+    const [modalToShow, setModalToShow] = useState(<Work />);
     const [modalOpen, setModalOpen] = useState(false);
     let cnt = 1;
 
@@ -47,8 +46,8 @@ function Start() {
                 onRequestClose={closeModal}
                 shouldCloseOnOverlayClick={false}
                 shouldCloseOnEsc={true}
-            >
-            {modalToShow}
+                >
+                {modalToShow}
             </ReactModal>
         </div>
     )
