@@ -21,38 +21,44 @@ function Work() {
     const [imageName, setImageName] = useState(imageArray[0][1]);
   
     const handlePrevious = () => {
+        setIndex(index - 1);
         console.log(index);
-        setImageName(imageArray[index][1]);
         if (index < 1) {
+            setImageName(imageArray[index][1]);
             setDisplayPrev('none');
             setIndex(index + 1);
         }
         else {
-            setIndex(index - 1);
+            setImageName(imageArray[index][1]);
             setDisplayNext('block');
         }
     };
     
     const handleNext = () => {
+        setIndex(index + 1);
         console.log(index);
-        setImageName(imageArray[index][1]);
         if (index === nrOfImgs) {
+            setImageName(imageArray[index][1]);
             setDisplayNext('none');
-            setIndex(index - 1);
+            setIndex(index -1);
         }
         else {
-            setIndex(index + 1);
+            setImageName(imageArray[index][1]);
             setDisplayPrev('block');
         }
     };
     
     return (
         <div>
-            <h1>Arbeidsplasser</h1>
             <div>
-                <button style={{display:displayPrev}} onClick={handlePrevious}>Forrige</button>
-                <img src={imageName}></img>
-                <button style={{display:displayNext}} onClick={handleNext}>Neste</button>
+                <h1>Arbeidsplasser</h1>
+            </div>
+            <div className="slideshow-container">
+                <div className="myslides fade">
+                    <img src={imageName}></img>
+                </div>
+                <button className="prevbutton" style={{display:displayPrev}} onClick={handlePrevious}>&#10094;</button>
+                <button className="nextbutton" style={{display:displayNext}} onClick={handleNext}>&#10095;</button>
             </div>
         </div>
     )

@@ -40,3 +40,10 @@ Må nok manuelt starte hver runde
     - Opprettet cosmos db bio
     - Opprettet http-trigger funksjon
     - Testet ut det å ha en startside, som dynamisk viser aktuell modal ihht f.eks tema.
+
+
+17.03.2023
+    - Ordnet bilde-karusell.
+        Sliter med å få logikken til å velge riktig bilde når man trykker fem og tilbake.
+
+    - Gjort litt styling på bilde-karusellen.

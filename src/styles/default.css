@@ -1,6 +1,5 @@
 img {
-    max-width: 800px;
-    max-height: 600px;
+    width: 100%;
 }
 
 
@@ -14,4 +13,56 @@ img {
     width: 80%;
     height: 80%;
     margin: auto;
+}
+
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+.prevbutton, .nextbutton {
+    cursor: pointer;
+    position: absolute;
+    top: 300px;
+    margin-top: -22px;
+    width: auto;
+    padding: 16px;
+    color: grey;
+    font-weight: bold;
+    font-size: 28px;
+    transition: 0.6s ease;
+    /* border-radius: 0 3px 3px 0; */
+    border: none;
+    user-select: none;
+    background-color: transparent;
+}
+
+.nextbutton {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prevbutton {
+    left: 0;
+}
+
+.prevbutton:hover, .nextbutton:hover {
+    /* background-color: rgba(0,0,0,0.8); */
+    color: black;
+}
+
+.myslides {
+    width: 90%;
+    margin: auto;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
