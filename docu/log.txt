@@ -45,5 +45,10 @@ Må nok manuelt starte hver runde
 17.03.2023
     - Ordnet bilde-karusell.
         Sliter med å få logikken til å velge riktig bilde når man trykker fem og tilbake.
+        Fikk det til med en hel del triksing og testing.
 
     - Gjort litt styling på bilde-karusellen.
+    - La til en inputboks for å registrere keydown (pil høyre og venstre) for å bla i bilder
+        Skjuler denne med css
+        
+

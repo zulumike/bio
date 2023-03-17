@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import '../styles/default.css';
 
 function Work() {
-
-    const [index, setIndex] = useState(1);
+    const [index, setIndex] = useState(0);
     const [displayPrev, setDisplayPrev] = useState('none');
     const [displayNext, setDisplayNext] = useState('block');
     
+    const inputRef = useRef();
+
     function importAll(r) {
         let images = {};
         r.keys().map(item => { images[item.replace('./', '')] = r(item); });
@@ -17,47 +18,48 @@ function Work() {
     
     const imageArray = Object.entries(images);
     const nrOfImgs = imageArray.length - 1;
-
-    const [imageName, setImageName] = useState(imageArray[0][1]);
+    const [imageName, setImageName] = useState(imageArray[index][1]);
   
-    const handlePrevious = () => {
-        setIndex(index - 1);
-        console.log(index);
-        if (index < 1) {
-            setImageName(imageArray[index][1]);
+    function handlePrev() {
+        inputRef.current.focus();
+        const newIndex = index -1;
+        if (newIndex === 0) {
             setDisplayPrev('none');
-            setIndex(index + 1);
         }
-        else {
-            setImageName(imageArray[index][1]);
-            setDisplayNext('block');
-        }
+        setIndex(newIndex);
+        setImageName(imageArray[newIndex][1]);
+        setDisplayNext('block');
     };
-    
-    const handleNext = () => {
-        setIndex(index + 1);
-        console.log(index);
-        if (index === nrOfImgs) {
-            setImageName(imageArray[index][1]);
+
+    function handleNext() {
+        inputRef.current.focus();
+        let newIndex = index + 1;
+        if (newIndex === nrOfImgs) {
             setDisplayNext('none');
-            setIndex(index -1);
         }
-        else {
-            setImageName(imageArray[index][1]);
-            setDisplayPrev('block');
-        }
+        setIndex(newIndex);
+        setImageName(imageArray[newIndex][1]);
+        setDisplayPrev('block');
     };
-    
+
+    function arrowKeyPress(event) {
+        if (event.keyCode === 37 && index > 0) {
+            handlePrev();
+        };
+        if (event.keyCode === 39 && index < nrOfImgs) {
+            handleNext();
+        };
+    };
+
+
     return (
-        <div>
-            <div>
-                <h1>Arbeidsplasser</h1>
-            </div>
+        <div className="toppdivs">
+            <input onKeyDown={arrowKeyPress} ref={inputRef} autoFocus />
             <div className="slideshow-container">
                 <div className="myslides fade">
-                    <img src={imageName}></img>
+                    <img src={imageName} alt=''></img>
                 </div>
-                <button className="prevbutton" style={{display:displayPrev}} onClick={handlePrevious}>&#10094;</button>
+                <button className="prevbutton" style={{display:displayPrev}} onClick={handlePrev}>&#10094;</button>
                 <button className="nextbutton" style={{display:displayNext}} onClick={handleNext}>&#10095;</button>
             </div>
         </div>
