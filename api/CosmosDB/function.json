@@ -18,11 +18,19 @@
     {
       "type": "cosmosDB",
       "direction": "out",
-      "name": "updateDocument",
+      "name": "outputDocument",
       "databaseName": "biodb",
       "collectionName": "biocollection",
       "createIfNotExists": false,
-      "id": "{memberid}",
+      "connectionStringSetting": "dbString"
+    },
+    {
+      "name": "readDocument",
+      "type": "cosmosDB",
+      "direction": "in",
+      "databaseName": "biodb",
+      "collectionName": "biocollection",
+      "sqlQuery": "SELECT * FROM Documents",
       "connectionStringSetting": "dbString"
     }
   ]

@@ -51,4 +51,20 @@ Må nok manuelt starte hver runde
     - La til en inputboks for å registrere keydown (pil høyre og venstre) for å bla i bilder
         Skjuler denne med css
         
+20.03.2023
+    - Lagt inn alle bilder og oppdatert alle komponenter slik at alle 
+        temaer er nå klare til presentasjon.
+
+        NB: Må finne en måte å få vist alle bildene størst mulig uten at noe havner utenfor visning.
+    
+    - Startet på prosess for å å lagret svarene til database.
+        Tanken er å presentere resultater til slutt
+    - Lagring til db ok.
+    - Også laget en komponent som presenterer resultater.
+    - Står igjen en del styling.
+    - Samt kanskje gi poengsum?
+
+    - Det meste er på plass.
+        Men mangler reset-funksjonen for it-ansvarlig
+            Den skal slette data fra database slik at man kan starte med blanke ark
 

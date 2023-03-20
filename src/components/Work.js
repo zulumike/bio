@@ -10,11 +10,12 @@ function Work() {
 
     function importAll(r) {
         let images = {};
+        // eslint-disable-next-line
         r.keys().map(item => { images[item.replace('./', '')] = r(item); });
         return images;
     }
 
-    const images = importAll(require.context('../img/work', false, /\.(png|jpe?g|svg)$/));
+    const images = importAll(require.context('../img/work', false, /\.(png|PNG|jpe?g|JPE?G|svg|SVG)$/));
     
     const imageArray = Object.entries(images);
     const nrOfImgs = imageArray.length - 1;
