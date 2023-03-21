@@ -57,7 +57,7 @@ img {
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px #041c2c;
+    box-shadow: 5px 5px 5px #041c2c;
 }
 
 .themeboxes:hover {
@@ -115,7 +115,6 @@ img {
 }
 
 .prevbutton:hover, .nextbutton:hover {
-    /* background-color: rgba(0,0,0,0.8); */
     color: black;
 }
 
@@ -143,7 +142,7 @@ img {
     margin: auto;
     background-color: #6bb8ff;
     border-radius: 10px;
-    box-shadow: 5px 5px #041c2c;
+    box-shadow: 5px 5px 5px #041c2c;
 }
 
 .result-table {
