@@ -18,7 +18,10 @@ function Start() {
 
     if (!participantName) {
         participantName = prompt('Skriv inn navnet ditt');
-        localStorage.setItem("participantName", participantName);
+        if (participantName) {
+            localStorage.setItem("participantName", participantName);
+        }
+        window.location.reload(false);
     };
 
     function closeModal() {
