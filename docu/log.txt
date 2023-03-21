@@ -67,4 +67,7 @@ Må nok manuelt starte hver runde
     - Det meste er på plass.
         Men mangler reset-funksjonen for it-ansvarlig
             Den skal slette data fra database slik at man kan starte med blanke ark
+        
+21.03.2023
+    - Videre styling
 
