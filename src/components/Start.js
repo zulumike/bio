@@ -53,7 +53,8 @@ function Start() {
     }
 
     function resetGame() {
-
+        localStorage.clear();
+        window.location.reload(false);
     }
 
     if (participantName === 'ItteAnsvarlig') {
