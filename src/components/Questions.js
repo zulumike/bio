@@ -99,7 +99,7 @@ function Questions() {
         console.log(writeAnswersToDB());
         return (
             <div>
-                <button onClick={resetQuesdtions}>Resett</button>
+                <button onClick={resetQuesdtions}>Reset</button>
             </div>
         )
     }
